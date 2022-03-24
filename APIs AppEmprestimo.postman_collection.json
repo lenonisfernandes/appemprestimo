@@ -1,0 +1,650 @@
+{
+	"info": {
+		"_postman_id": "39c33cc3-a882-4636-a3c1-4c75117a818b",
+		"name": "APIs AppEmprestimo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "8081/api/usuario",
+			"item": [
+				{
+					"name": "usuario/excluir",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/usuario/3/excluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"usuario",
+								"3",
+								"excluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "usuario/incluir",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"nome\": \"Ignes\",\n        \"email\": \"ignes@email.com\",\n        \"senha\": \"123\",\n        \"admin\": false,\n        \"endereco\": {\n            \"cep\": \"13970-190\",\n            \"logradouro\": \"Rua José Bonifácio\",\n            \"complemento\": \"\",\n            \"bairro\": \"Centro\",\n            \"localidade\": \"Itapira\",\n            \"uf\": \"SP\"\n        }\n    }\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/usuario/incluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"usuario",
+								"incluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "usuario/listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/usuario/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"usuario",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "8082/api/cliente",
+			"item": [
+				{
+					"name": "cliente/listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/cliente/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"cliente",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cliente/incluir",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"nome\": \"Pedro\",\n        \"email\": \"bruna@email.com\",\n        \"cpf\": \"12345678901\",\n        \"endereco\": null,\n        \"usuario\": {\n            \"id\": 1\n        }\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/cliente/incluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"cliente",
+								"incluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cliente/excluir",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/cliente/3/excluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"cliente",
+								"3",
+								"excluir"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "8083/api/material",
+			"item": [
+				{
+					"name": "material/listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/material/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"material",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "material/incluir",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"tipo\": \"Livro\",\n        \"titulo\": \"Livro3\",\n        \"autor\": \"Autor2\",\n        \"alugado\": 3,\n        \"usuario\": {\n            \"id\": 1\n       },\n        \"edicao\": 2,\n        \"ano\": 2022,\n        \"qnt\": 7\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/material/incluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"material",
+								"incluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "material/excluir",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/material/5/excluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"material",
+								"5",
+								"excluir"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "8083/api/material/academico",
+			"item": [
+				{
+					"name": "material/academico/excluir",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/material/academico/6/excluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"material",
+								"academico",
+								"6",
+								"excluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "materia/academico/incluir",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"tipo\": \"Academico\",\n        \"titulo\": \"Academico1\",\n        \"autor\": \"Fernandes, L. I. dos S.\",\n        \"alugado\": 0,\n        \"usuario\": {\n            \"id\": 1\n        },\n        \"nacional\": true,\n        \"idioma\": \"pt\",\n        \"tipo\": \"artigo\"\n    }\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/material/academico/incluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"material",
+								"academico",
+								"incluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "material/academico/listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/material/academico/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"material",
+								"academico",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "8083/api/material/livro",
+			"item": [
+				{
+					"name": "material/livro/listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/material/livro/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"material",
+								"livro",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "material/incluir/livro",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"tipo\": \"Livro\",\n        \"titulo\": \"Livro1\",\n        \"autor\": \"Autor1\",\n        \"alugado\": 3,\n        \"usuario\": {\n            \"id\": 2\n        },\n        \"edicao\": 5,\n        \"ano\": 2019,\n        \"qnt\": 20\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/material/livro/incluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"material",
+								"livro",
+								"incluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "material/livro/excluir",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/material/livro/8/excluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"material",
+								"livro",
+								"8",
+								"excluir"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "8083/api/material/revista",
+			"item": [
+				{
+					"name": "material/revista/listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/material/revista/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"material",
+								"revista",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "material/revista/excluir",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/material/revista/10/excluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"material",
+								"revista",
+								"10",
+								"excluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "material/revista/incluir",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"tipo\": \"Revista\",\n        \"titulo\": \"JAVA for teens\",\n        \"autor\": null,\n        \"alugado\": 5,\n        \"usuario\": {\n            \"id\": 1\n        },\n        \"ano\": 2021,\n        \"mes\": 4,\n        \"edicao\": 34\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/material/revista/incluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"material",
+								"revista",
+								"incluir"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "8084/api/emprestimo",
+			"item": [
+				{
+					"name": "emprestimo/listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/api/emprestimo/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"emprestimo",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "emprestimo/incluir",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"data\": \"2022-02-08T15:13:41\",\n        \"descricao\": \"Segundo Emprestimo\",\n        \"web\": false,\n        \"cliente\": {\n            \"id\": 2\n        },\n        \"materiais\": [\n            {\n                \"tipo\": \"Livro\",\n                \"id\": 3\n            }\n        ],\n        \"usuario\": {\n            \"id\": 1\n        }\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/api/emprestimo/incluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"emprestimo",
+								"incluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "emprestimo/excluir",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/api/emprestimo/2/excluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"emprestimo",
+								"2",
+								"excluir"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "8085/api/log",
+			"item": [
+				{
+					"name": "log-listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8085/api/log/listar",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"log",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "log-incluir",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"nome\": \"teste3\",\n        \"data\": \"2022-03-09T14:28:20\"\n\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8085/api/log/incluir",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"log",
+								"incluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "log-excluir",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8085/api/log/1/excluir",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"log",
+								"1",
+								"excluir"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

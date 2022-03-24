@@ -1,0 +1,72 @@
+<%@page import="java.util.List"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AppMIT</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+</head>
+<body>
+<c:import url="/WEB-INF/jsp/menu.jsp"/>
+
+<div class="container mt-3">
+	<h2>Cadastramento de Materiais Academicos</h2>
+	
+	<c:if test="${not empty mensagem }">
+		<div class="alert alert-success">
+	  		<strong>Confirmação!</strong> ${mensagem }
+		</div>
+	</c:if>
+	
+	<form action="/academico" method="get">
+		<button type="submit" class="btn btn-primary">Novo</button>
+	</form>
+	
+	<hr>
+	
+	<c:if test="${not empty lista}">
+	<h2>Total de materiais: ${lista.size()}</h2><hr>
+	
+  	  <table class="table table-striped">
+	    <thead>
+	      <tr>
+	      	<th>ID</th>
+	        <th>Título</th>
+	        <th>Autor</th>
+	        <th>Nacional</th>
+	        <th>Idioma</th>
+	        <th>Tipo</th>
+	        <th>Está alugado?</th>
+	        <th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	    	<c:forEach var="a" items="${lista}"> 
+		      <tr>
+		      	<td>${a.id }</td>
+		        <td>${a.titulo}</td>
+		        <td>${a.nacional}</td>
+		        <td>${a.idioma}</td>
+		        <td>${a.tipo}</td>
+		        <td>${a.alugado}</td>
+		        <td><a href="/academico/${a.id}/excluir">excluir</a></td>
+		      </tr>
+	      </c:forEach>
+	    </tbody>
+	  </table>
+	  
+	  </c:if>
+	  <c:if test="${empty lista }">
+	  	<h2>Não existem materiais acadêmicos cadastrados!!!</h2>
+	  </c:if>
+
+</div>
+
+
+</body>
+</html>
